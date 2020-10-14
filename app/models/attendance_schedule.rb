@@ -1,0 +1,2 @@
+class AttendanceSchedule < ApplicationRecord
+end

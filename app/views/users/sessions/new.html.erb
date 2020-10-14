@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="text-center">
+        <h2>ログイン</h2><br>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render "layouts/error", resource: resource %>
+
+        <div class="field form-group">
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.label :メールアドレス %>
+            </div>
+          </div>
+          <div class="col-sm-12 form">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+        </div><br>
+
+        <div class="field form-group">
+          <div class="row">
+            <div class="col-sm-12">
+              <%= f.label :パスワード（６文字以上） %>
+            </div>
+          </div>
+          <div class="col-sm-12 form">
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </div>
+        </div><br>
+
+        <div class="actions">
+          <div class="col-sm-2 col-sm-offset-5 action"><br>
+          <%= f.submit "ログイン", class:"btn btn-success btn-block" %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

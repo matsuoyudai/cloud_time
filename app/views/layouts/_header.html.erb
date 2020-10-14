@@ -1,0 +1,47 @@
+<header class="navbar navbar-fixed-top">
+  <div class="container">
+    <nav class='nav navbar-nav navbar-left' >
+      <% if admin_signed_in? %>
+        <%= link_to admins_homes_top_path do %>
+        <%= image_tag'cloudtime.jpg', :size => '70x80' %>
+        <% end %>
+      <% elsif user_signed_in? %>
+        <%= link_to attendance_path do %>
+        <%= image_tag'cloudtime.jpg', :size => '70x80' %>
+        <% end %>
+      <% else %>
+        <%= link_to root_path do %>
+        <%= image_tag'cloudtime.jpg', :size => '70x80' %>
+        <% end %>
+      <% end %>
+    </nav>
+    <nav>
+      <ul class='nav navbar-nav justify-content-center' >
+        <% if admin_signed_in? %>
+          <div class="admin-message">管理者としてログインしています</div>
+        <% elsif user_signed_in? %>
+          <div class="user-message">ようこそ、<%= current_user.name %>さん!</div>
+        <% else %>
+        <% end %>
+      </ul>
+    </nav>
+
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if admin_signed_in? %>
+          <li><%= link_to 'ユーザー一覧', admins_users_path, class: 'nav-link' %></li>
+          <li><%= link_to '申請一覧', admins_applys_path, class: 'nav-link' %></li>
+          <li><%= link_to '休暇一覧', admins_vacations_path, class: 'nav-link' %></li>
+          <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link' %></li>
+        <% elsif user_signed_in? %>
+          <li><%= link_to '勤務表', attendance_schedules_path, class: 'nav-link' %></li>
+          <li><%= link_to 'アカウント設定', users_path, class: 'nav-link' %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+        <% else %>
+          <li><%= link_to '新規登録', new_user_registration_path, class: 'nav-link' %></li>
+          <li><%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
