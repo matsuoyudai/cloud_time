@@ -41,3 +41,31 @@ $(document).ready(function () {
     hidePrevious : false
   });
 });
+
+function showClock1() {
+  var nowTime = new Date();
+  var nowMonth = nowTime.getMonth()+1;
+  var nowDate  = nowTime.getDate();
+  var nowDay = nowTime.getDay() ; // 曜日(数値)
+  var nowDayStr = [ "日", "月", "火", "水", "木", "金", "土" ][nowDay] ; // 曜日(日本語表記)
+  var msg = nowMonth + "月" + nowDate + "日" + "(" + nowDayStr + ")";
+  document.getElementById("RealtimeClockArea1").innerHTML = msg;
+}
+setInterval('showClock1()',1000);
+
+function set2fig(num) {
+  // 桁数が1桁だったら先頭に0を加えて2桁に調整する
+  var ret;
+  if( num < 10 ) { ret = "0" + num; }
+  else { ret = num; }
+  return ret;
+}
+function showClock2() {
+  var nowTime = new Date();
+  var nowHour = set2fig( nowTime.getHours() );
+  var nowMin  = set2fig( nowTime.getMinutes() );
+  var nowSec  = set2fig( nowTime.getSeconds() );
+  var msg = nowHour + ":" + nowMin + ":" + nowSec;
+  document.getElementById("RealtimeClockArea2").innerHTML = msg;
+}
+setInterval('showClock2()',1000);

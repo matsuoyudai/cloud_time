@@ -1,1 +1,47 @@
-admin/vacations/index
+<div class="container">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+
+			<h2><span class="contents_title">休暇一覧・追加</span></h2>
+			<br>
+			<!-- error-message -->
+			<% if @vacation.errors.any? %>
+			<div class="error_explanation genre-error">
+				<h2><%= @vacation.errors.count %> errors prohibited this obj from being saved:</h2>
+				<ul>
+				<% @vacation.errors.full_messages.each do |message| %>
+			    	<li><%= message %></li>
+				<% end %>
+				</ul>
+		    </div>
+			<% end %>
+			<br>
+			<!-- new genre form -->
+			<div class="new-vacation-form">
+				<%= form_for(@vacation, url:admins_vacations_path(@vacation)) do |f| %>
+					<%= f.label :name, "休暇名" %>
+					<%= f.text_field :name %>
+					<%= f.submit '追加', class:"btn btn-info" %>
+				<% end %>
+			</div>
+			<br>
+			<!-- genre index -->
+			<table class="table vacation-index">
+				<thead class="contents_title">
+					<tr>
+						<th>休暇一覧</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @vacations.each do |vacation| %>
+					<tr>
+						<td><%= vacation.name %></td>
+						<td><%= link_to '削除する', admins_vacation_path(vacation), method: :delete, class:"btn btn-primary" %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

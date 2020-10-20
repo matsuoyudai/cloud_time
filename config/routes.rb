@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   namespace :admins do
     get 'homes/top'
     resources :users, only:[:index, :show]
-    resources :vacations, only:[:index, :create, :update]
+    resources :vacations, only:[:index, :create, :destroy]
     resources :applys, only: [:index,:show] #do
       #collection do
         #update :approve
@@ -25,8 +25,8 @@ Rails.application.routes.draw do
 
   scope module: :users do
     root 'homes#top'
-    get "attendances/index", as: "attendance"
-    resources :attendance_schedules, only: [:index, :show]
+    resources :attendances, only: [:index]
+    resources :attendance_schedules, only: [:index, :show, :create, :edit]
     resources :users, only: [:index, :update]
   end
 

@@ -1,1 +1,29 @@
-admin/users/index
+<div class="container">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+
+			<h2><span class="contents_title">ユーザー一覧</span></h2>
+			<br>
+
+			<table class="table table-hover">
+        <thead class="contents_title">
+          <tr>
+            <th>ユーザーID</th>
+            <th>氏名</th>
+            <th>メールアドレス</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= link_to (user.name), attendance_schedules_path(@user) %></td>
+              <td><%= user.email %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+		</div>
+	</div>
+</div>

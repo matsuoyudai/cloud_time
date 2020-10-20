@@ -1,1 +1,43 @@
-user/attendance_schedules/index
+<div class="container">
+	<div class="row">
+		<div class="text-center">
+			<h2><%= @year_name %>年<%= @month_name %>月の勤務表</h2>
+	    <table class="table table-bordered">
+	      <thead class="contents_title">
+	        <tr>
+	          <th>日付</th>
+	          <th>勤務区分</th>
+	          <th>出勤時刻</th>
+	          <th>退勤時刻</th>
+	          <th>休憩開始</th>
+	          <th>休憩終了</th>
+	          <th>総労働時間</th>
+	          <th></th>
+	        </tr>
+	      </thead>
+
+	      <tbody>
+	      	<%=(Date.parse("#{@start_date}")..Date.parse("#{@end_date}")).each do |date| %>
+	      	<% css_class = case %w{日 月 火 水 木 金 土}[date.wday]
+					    when '土'
+					      'text-primary'
+					    when '日'
+					      'text-danger'
+					    end
+					%>
+	      	<tr>
+	      		<td class="<%= css_class %>"><%= date %>（<%= %w[日 月 火 水 木 金 土][date.wday] %>）</td>
+	      		<td></td>
+	      		<td></td>
+	      		<td></td>
+	      		<td>12：00</td>
+	      		<td>13：00</td>
+	      		<td></td>
+	      		<td><%= link_to "勤怠変更", class:"btn btn-info" %></td>
+	      	</tr>
+	      	<% end %>
+	    	</tbody>
+	    </table>
+		</div>
+	</div>
+</div>
