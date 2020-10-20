@@ -1,24 +1,46 @@
-# README
+# クラウドタイム（勤怠管理）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+企業様向けに開発されたかんたん勤怠管理サービスです。
+パソコン操作が苦手な方、紙のタイムカードを利用されているユーザー様でもスムーズにお乗り換えいただけます。
+「脱・タイムカード」
 
-Things you may want to cover:
+### サイトテーマ
+シンプルで見やすく使いやすい勤怠管理サービスです。
+従来の紙での勤怠管理を利用していたお客様向けに、使い易さ・分かり易さを意識して開発されました。
+勤怠のクラウド化の第一歩として打ってつけのサービスかと思います。
 
-* Ruby version
+### テーマを選んだ理由
+前職でHR系の企業に勤めていた影響で、HRTechに興味がある為
 
-* System dependencies
+### ターゲットユーザー
+- 紙のタイムカードを利用されている企業様
+- テレワークの普及により勤怠管理に不安を抱えている企業様
+- 現在利用している勤怠管理のコストが高く、費用を抑えたいユーザー企業様
+- シンプルでわかりやすく使いやすい勤怠管理を利用したい方
 
-* Configuration
+### 主な利用シーン
+（ユーザー側）
+- 出勤時
+- 退勤時
+- 勤怠修正時
+- 休暇取得時　など
 
-* Database creation
+（管理者）
+- 勤怠の承認
+- 休暇の承認
+- 社員の勤務時間の閲覧　など
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1no8xDS7VK4fACAc3bffkXPyB-Vf3-6CXI5HL37i2QNo/edit#gid=0
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
+- OS：macOS(Catalina)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：Vagrant,VirtualBox
 
-* Deployment instructions
-
-* ...
+## 使用素材
