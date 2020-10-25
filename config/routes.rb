@@ -26,7 +26,12 @@ Rails.application.routes.draw do
   scope module: :users do
     root 'homes#top'
     resources :attendances, only: [:index]
-    resources :attendance_schedules, only: [:index, :show, :create, :edit]
+    resources :attendance_schedules, only: [:index, :new, :show, :create, :update] do
+      member do
+        patch :leave
+      end
+    post 'create_attendance'
+    end
     resources :users, only: [:index, :update]
   end
 

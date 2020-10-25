@@ -1,4 +1,6 @@
 class Attendance < ApplicationRecord
 	belongs_to :user
-	has_many :attendance_schedules, dependent: :destroy
+	has_one :attendance_schedule, dependent: :destroy
+
+	validates :user_id, uniqueness: {scope: :working_day}
 end

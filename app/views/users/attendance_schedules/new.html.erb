@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		<div class="text-center">
+			<h2>勤怠登録</h2>
+			<%= form_for @attendance_schedule do |f| %>
+		    <table class="table table-bordered">
+		    	<thead class="contents_title">
+		    		<tr>
+		    			<th><%= f.label :working_day, "勤務日" %></th>
+		    			<th><%= f.label :arrive_time, "出勤時刻" %></th>
+		    			<th><%= f.label :leave_time, "退勤時刻" %></th>
+		    			<th><%= f.label :break_start_time, "休憩開始" %></th>
+		    			<th><%= f.label :break_end_time, "休憩終了" %></th>
+		    			<th><%= f.label :vacation_id, "休暇取得" %></th>
+		    		</tr>
+		    	</thead>
+		      <tbody>
+		      	<tr>
+		      		<td><%= f.date_field :working_day %></td>
+		      		<td><%= f.time_field :arrive_time %></td>
+		      		<td><%= f.time_field :leave_time %></td>
+		      		<td><%= f.time_field :break_start_time %></td>
+		      		<td><%= f.time_field :break_end_time %></td>
+		      		<td><%#= f.select_field :vacation_id, Vacation.all, :id, :name %></td>
+		      	</tr>
+		    	</tbody>
+		    </table>
+		    <%= link_to "戻る", attendance_schedules_path, class:"btn btn-danger" %>　
+		    <%= f.submit "勤怠を登録", class:"btn btn-success" %>
+		    <% end %>
+		</div>
+	</div>
+</div>

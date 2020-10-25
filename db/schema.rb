@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_19_095938) do
+ActiveRecord::Schema.define(version: 2020_10_25_045122) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_10_19_095938) do
 
   create_table "applies", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "attendance_id"
+    t.integer "attendance_schedule_id"
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,21 +34,14 @@ ActiveRecord::Schema.define(version: 2020_10_19_095938) do
 
   create_table "attendance_schedules", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "attendance_id"
-    t.time "arrive_time"
-    t.time "leave_time"
-    t.time "break_start_time"
-    t.time "break_end_time"
+    t.date "working_day"
+    t.datetime "arrive_time"
+    t.datetime "leave_time"
+    t.datetime "break_start_time"
+    t.datetime "break_end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "working_status"
-  end
-
-  create_table "attendances", force: :cascade do |t|
-    t.integer "user_id"
-    t.date "working_day"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

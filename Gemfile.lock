@@ -127,6 +127,7 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    holiday_jp (0.7.1)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -318,6 +319,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   enum_help
+  holiday_jp
   jbuilder (~> 2.5)
   jquery-rails
   kaminari
