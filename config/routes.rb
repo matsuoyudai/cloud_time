@@ -30,7 +30,9 @@ Rails.application.routes.draw do
       member do
         patch :leave
       end
-    post 'create_attendance'
+      collection do
+        post :create_attendance
+      end
     end
     resources :users, only: [:index, :update]
   end

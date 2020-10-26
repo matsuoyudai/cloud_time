@@ -3,15 +3,13 @@
 		<div class="text-center">
 			<p id="RealtimeClockArea1"></p>
 	    <p id="RealtimeClockArea2"></p>
-			<br><br>
-			<p id="notice"><%= notice %></p>
-
-			<%= link_to "出 勤", attendance_schedules_path, method: :post, class:"btn btn-primary btn-lg" %>
-				<% if @attendance_schedule.present? %>　　
-					<%= link_to "退 勤", leave_attendance_schedule_path(@attendance_schedule), method: :patch,class:"btn btn-primary btn-lg" %>
-	      		<% else %>
-	      			<button type="button" class="btn btn-primary btn-lg" disabled >退 勤</button>
-	      		<% end %>
+			<br><p id="notice"><%= notice %></p><br>
+			<%= link_to "出 勤", create_attendance_attendance_schedules_path, method: :post, class:"btn btn-primary btn-lg" %>
+			<% if @attendance_schedule.present? %>　　
+				<%= link_to "退 勤", leave_attendance_schedule_path(@attendance_schedule), method: :patch,class:"btn btn-primary btn-lg" %>
+      		<% else %>
+      			<button type="button" class="btn btn-primary btn-lg" disabled >退 勤</button>
+      		<% end %>
 		</div>
 	</div>
 </div>

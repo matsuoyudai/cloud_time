@@ -16,6 +16,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#box{
+  height: 500px;
+  width: 80%;
+  margin:0 auto;
+}
 .image1 {
   background-image: url(image1.jpg);
 }
@@ -37,7 +42,7 @@
 }
 
 .top-text {
-  font-size: 16px
+  font-size: 18px
 }
 
 .nav-link {
@@ -78,4 +83,8 @@ p#RealtimeClockArea2 {
 
 .sat {
   color: #0000ff;
+}
+
+.header_button {
+  padding-top: 15px;
 }

@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="text-center">
-			<h2><%= @month_name %>月<%= @date %>日の勤務詳細</h2>
+			<h2><%= @month_name %>月<%= @date %>日の勤怠</h2>
 			<%= form_for(@attendance_schedule) do |f| %>
 	    <table class="table table-bordered">
 	    	<thead class="contents_title">
@@ -10,7 +10,7 @@
 	    			<th><%= f.label :leave_time, "退勤時刻" %></th>
 	    			<th><%= f.label :break_start_time, "休憩開始" %></th>
 	    			<th><%= f.label :break_end_time, "休憩終了" %></th>
-	    			<th><%= f.label :vacation_id, "休暇申請" %></th>
+	    			<!-- <th><%#= f.label :vacation_id, "休暇申請" %></th> -->
 	    		</tr>
 	    	</thead>
 	      <tbody>
@@ -19,7 +19,7 @@
 		      	<td><%= f.time_field :leave_time %></td>
 		      	<td><%= f.time_field :break_start_time %></td>
 		      	<td><%= f.time_field :break_end_time %></td>
-	      		<td></td>
+	      		<!-- <td></td> -->
 	      	</tr>
 	    	</tbody>
 	    </table>
