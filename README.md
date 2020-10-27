@@ -39,3 +39,4 @@ https://docs.google.com/spreadsheets/d/1no8xDS7VK4fACAc3bffkXPyB-Vf3-6CXI5HL37i2
 - 仮想環境：Vagrant,VirtualBox
 
 ## 使用素材
+- スライド画像(https://unsplash.com/)

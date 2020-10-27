@@ -5,11 +5,11 @@
         <h2>アカウント設定</h2><br>
         <%= form_for(@user, url: user_path(@user.id)) do |f| %>
         <% if @user.errors.any? %>
-          <ul>
-            <% @user.errors.full_messages.uniq.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
+        <ul>
+          <% @user.errors.full_messages.uniq.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
         <% end %>
 
         <div class="field form-group">
@@ -47,7 +47,7 @@
 
         <div class="actions">
           <div class="col-sm-2 col-sm-offset-5 action"><br>
-          <%= f.submit "登録情報変更", class:"btn btn-success btn-block" %>
+            <%= f.submit "登録情報変更", class:"btn btn-success btn-block" %>
           </div>
         </div>
         <%= f.hidden_field :name, value: @user.name %>

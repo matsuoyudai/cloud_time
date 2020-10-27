@@ -38,6 +38,7 @@
           <li class="header_button"><%= link_to 'アカウント設定', users_path, class: 'nav-link' %></li>
           <li class="header_button"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
         <% else %>
+          <li class="header_button"><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post, class: 'nav-link' %></li>
           <li class="header_button"><%= link_to '新規登録', new_user_registration_path, class: 'nav-link' %></li>
           <li class="header_button"><%= link_to 'ログイン', new_user_session_path, class: 'nav-link' %></li>
         <% end %>

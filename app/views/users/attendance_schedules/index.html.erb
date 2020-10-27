@@ -3,80 +3,80 @@
 		<div class="text-center">
 			<h2><%= @year_name %>年<%= @month_name %>月の勤務表</h2>
 			<div class="text-right">
-			<h3><%= @month_name %>月の総労働時間：<strong><%= @total_time %>時間</strong></h3>
-		</div>
-	    <table class="table table-bordered">
-	      <thead class="contents_title">
-	        <tr>
-	          <th>日付</th>
-	          <th>勤務区分</th>
-	          <th>出勤時刻</th>
-	          <th>退勤時刻</th>
-	          <th>休憩開始</th>
-	          <th>休憩終了</th>
-	          <th>労働時間</th>
-	          <th>登録・変更</th>
-	        </tr>
-	      </thead>
+				<h3><%= @month_name %>月の総労働時間：<strong><%= @total_time %>時間</strong></h3>
+			</div>
+			<table class="table table-bordered">
+				<thead class="contents_title">
+					<tr>
+						<th>日付</th>
+						<th>勤務区分</th>
+						<th>出勤時刻</th>
+						<th>退勤時刻</th>
+						<th>休憩開始</th>
+						<th>休憩終了</th>
+						<th>労働時間</th>
+						<th>登録・変更</th>
+					</tr>
+				</thead>
 
-	      <tbody>
-	      	<%=(Date.parse("#{@start_date}")..Date.parse("#{@end_date}")).each do |date| %>
-		      	<% css_class = case %w{日 月 火 水 木 金 土}[date.wday]
-						    when '土'
-						      'text-primary'
-						    when '日'
-						      'text-danger'
-						    when HolidayJp.holiday?(date)
-						  	  'text-danger'
-						    end
-						%>
-		      	<tr>
-		      		<td class="<%= css_class %>"><%= date %>（<%= %w[日 月 火 水 木 金 土][date.wday] %>）</td>
-		    			<td>
-		    				<% if HolidayJp.holiday?(date) %>
-									<%= "休日" %>
-								<% elsif date.wday == 0 ||date.wday == 6 %>
-									<%= "休日" %>
-								<% else %>
-									<%= "出勤" %>
-								<% end %>
-							</td>
-							<% schedule = @attendance_schedule.find_by(working_day: date) %>
-							<% if schedule.present? %>
-								<td>
-									<%= schedule.arrive_time.try(:strftime, "%H：%M") %>
-								</td>
-								<td>
-									<%= schedule.leave_time.try(:strftime, "%H：%M") %>
-								</td>
-								<td>
-									<%= schedule.break_start_time.try(:strftime, "%H：%M") %>
-								</td>
-								<td>
-									<%= schedule.break_end_time.try(:strftime, "%H：%M") %>
-								</td>
-								<td>
-									<% if schedule.leave_time.present? && schedule.arrive_time.present? && schedule.break_end_time.present? && schedule.break_start_time.present? %>
-									<%= Time.at((schedule.leave_time - schedule.arrive_time) - (schedule.break_end_time - schedule.break_start_time)).utc.strftime('%H：%M') %>
-								<% end %>
-								</td>
-								<td>
-									<%= link_to "勤怠変更", "#{attendance_schedule_path(schedule.id)}?date=#{date}", class:"btn btn-info" %>
-									</td>
+				<tbody>
+					<%=(Date.parse("#{@start_date}")..Date.parse("#{@end_date}")).each do |date| %>
+					<% css_class = case %w{日 月 火 水 木 金 土}[date.wday]
+					when '土'
+						'text-primary'
+					when '日'
+						'text-danger'
+					when HolidayJp.holiday?(date)
+						'text-danger'
+					end
+					%>
+					<tr>
+						<td class="<%= css_class %>"><%= date %>（<%= %w[日 月 火 水 木 金 土][date.wday] %>）</td>
+						<td>
+							<% if HolidayJp.holiday?(date) %>
+							<%= "休日" %>
+							<% elsif date.wday == 0 ||date.wday == 6 %>
+							<%= "休日" %>
 							<% else %>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td></td>
-								<td>
-									<%= link_to "勤怠登録", new_attendance_schedule_path, class:"btn btn-danger" %>
-								</td>
+							<%= "出勤" %>
 							<% end %>
-						</tr>
-	      	<% end %>
-	    	</tbody>
-	    </table>
+						</td>
+						<% schedule = @attendance_schedule.find_by(working_day: date) %>
+						<% if schedule.present? %>
+						<td>
+							<%= schedule.arrive_time.try(:strftime, "%H：%M") %>
+						</td>
+						<td>
+							<%= schedule.leave_time.try(:strftime, "%H：%M") %>
+						</td>
+						<td>
+							<%= schedule.break_start_time.try(:strftime, "%H：%M") %>
+						</td>
+						<td>
+							<%= schedule.break_end_time.try(:strftime, "%H：%M") %>
+						</td>
+						<td>
+							<% if schedule.leave_time.present? && schedule.arrive_time.present? && schedule.break_end_time.present? && schedule.break_start_time.present? %>
+							<%= Time.at((schedule.leave_time - schedule.arrive_time) - (schedule.break_end_time - schedule.break_start_time)).utc.strftime('%H：%M') %>
+							<% end %>
+						</td>
+						<td>
+							<%= link_to "勤怠変更", "#{attendance_schedule_path(schedule.id)}?date=#{date}", class:"btn btn-info" %>
+						</td>
+						<% else %>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<%= link_to "勤怠登録", new_attendance_schedule_path, class:"btn btn-danger" %>
+						</td>
+						<% end %>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
