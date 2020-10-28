@@ -3,15 +3,15 @@
     <nav class='nav navbar-nav navbar-left' >
       <% if admin_signed_in? %>
         <%= link_to admins_homes_top_path do %>
-        <%= image_tag'cloudtime.jpg', :size => '70x80' %>
+        <%= image_tag'logo.png', :size => '70x80' %>
         <% end %>
       <% elsif user_signed_in? %>
         <%= link_to attendances_path do %>
-        <%= image_tag'cloudtime.jpg', :size => '70x80' %>
+        <%= image_tag'logo.png', :size => '70x80' %>
         <% end %>
       <% else %>
         <%= link_to root_path do %>
-        <%= image_tag'cloudtime.jpg', :size => '70x80' %>
+        <%= image_tag'logo.png', :size => '70x80' %>
         <% end %>
       <% end %>
     </nav>
