@@ -23,7 +23,7 @@ class Users::AttendanceSchedulesController < ApplicationController
 	    end
 	    start_date = Time.now.beginning_of_month
 	    end_date = Time.now.end_of_month
-	    @attendance_schedule = AttendanceSchedule.select("*, strftime('%Y-%m-%d', arrive_time) as day").where(user_id: current_user.id, working_day: start_date..end_date)
+	    @attendance_schedule = AttendanceSchedule.select("*").where(user_id: current_user.id, working_day: start_date..end_date)
 	    @total_time = total_working_time(start_date, end_date)
 	    @total_time = sprintf("%0.1f", @total_time)
 	end
