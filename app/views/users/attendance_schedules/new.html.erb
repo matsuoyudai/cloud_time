@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="text-center">
-			<h2>勤怠登録</h2>
+			<h2>勤怠登録</h2><br>
 			<%= form_for @attendance_schedule do |f| %>
 		    <table class="table table-bordered">
 		    	<thead class="contents_title">
@@ -22,7 +22,7 @@
 		      		<td><%= f.time_field :break_end_time %></td>
 		      	</tr>
 		    	</tbody>
-		    </table>
+		    </table><br>
 		    <%= link_to "戻る", attendance_schedules_path, class:"btn btn-danger" %>　
 		    <%= f.submit "勤怠を登録", class:"btn btn-success" %>
 		    <% end %>
