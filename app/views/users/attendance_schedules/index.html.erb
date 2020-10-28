@@ -41,7 +41,7 @@
 							<%= "出勤" %>
 							<% end %>
 						</td>
-						<% schedule = @attendance_schedule.find_by(working_day: date) %>
+						<% schedule = @attendance_schedule.where(working_day: date).first %>
 						<% if schedule.present? %>
 						<td>
 							<%= schedule.arrive_time.try(:strftime, "%H：%M") %>
