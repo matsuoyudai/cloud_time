@@ -58,6 +58,8 @@
 						<td>
 							<% if schedule.leave_time.present? && schedule.arrive_time.present? && schedule.break_end_time.present? && schedule.break_start_time.present? %>
 							<%= Time.at((schedule.leave_time - schedule.arrive_time) - (schedule.break_end_time - schedule.break_start_time)).utc.strftime('%H：%M') %>
+							<% else schedule.leave_time.present? && schedule.arrive_time.present? %>
+							<%= Time.at(schedule.leave_time - schedule.arrive_time).utc.strftime('%H：%M') %>
 							<% end %>
 						</td>
 						<td>
