@@ -5,7 +5,7 @@ describe '四則演算' do
     end
   end
   context '足し算' do
-    it '1 + 1 は 2 になる' do
+    it '1 + 1 は 2 になります' do
       expect(1 + 1).to eq 3
     end
   end
