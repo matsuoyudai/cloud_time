@@ -80,7 +80,7 @@ class Users::AttendanceSchedulesController < ApplicationController
 
 	private
 	def attendance_schedule_params
-		params.require(:attendance_schedule).permit(:arrive_time,:leave_time,:break_start_time,:break_end_time, :working_day)
+		params.require(:attendance_schedule).permit(:arrive_time,:leave_time,:break_start_time,:break_end_time,:working_day)
 	end
 
 	def total_working_time(start_date, end_date) #総労働時間の算出
