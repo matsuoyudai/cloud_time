@@ -26,8 +26,10 @@
 						'text-primary'
 					when '日'
 						'text-danger'
-					when HolidayJp.holiday?(date)
-						'text-danger'
+					else
+						if (HolidayJp.holiday?(date))
+						  'text-danger'
+					  end
 					end
 					%>
 					<tr>
