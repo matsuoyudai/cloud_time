@@ -50,7 +50,7 @@ function showClock1() {
   var nowDay = nowTime.getDay() ; // 曜日(数値)
   var nowDayStr = [ "日", "月", "火", "水", "木", "金", "土" ][nowDay] ; // 曜日(日本語表記)
   var msg = nowMonth + "月" + nowDate + "日" + "(" + nowDayStr + ")";
-  document.getElementById("RealtimeClockArea1").innerHTML = msg;
+  if (location.pathname == "/attendances"){document.getElementById("RealtimeClockArea1").innerHTML = msg;}
 }
 setInterval('showClock1()',1000);
 
@@ -67,6 +67,6 @@ function showClock2() {
   var nowMin  = set2fig( nowTime.getMinutes() );
   var nowSec  = set2fig( nowTime.getSeconds() );
   var msg = nowHour + ":" + nowMin + ":" + nowSec;
-  document.getElementById("RealtimeClockArea2").innerHTML = msg;
+  if (location.pathname == "/attendances"){document.getElementById("RealtimeClockArea2").innerHTML = msg;}
 }
 setInterval('showClock2()',1000);
