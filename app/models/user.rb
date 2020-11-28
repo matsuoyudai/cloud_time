@@ -11,7 +11,7 @@ class User < ApplicationRecord
   end
 
   validates :name, presence: true,
-  length: {maximum: 20}
+  length: {maximum: 10}
   validates :name_kana, presence: true,
   length: {maximum: 20}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
