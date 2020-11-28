@@ -43,15 +43,15 @@ RSpec.describe User, type: :model do
     end
 
     # 7
-    it "nameが21文字以上であれば登録できないこと" do
-     user = FactoryBot.build(:user, name: "123456789012345678901")
+    it "nameが11文字以上であれば登録できないこと" do
+     user = FactoryBot.build(:user, name: "12345678901")
      user.valid?
-     expect(user.errors[:name]).to include("は20文字以下に設定して下さい。")
+     expect(user.errors[:name]).to include("は10文字以下に設定して下さい。")
     end
 
     # 8
-    it "nameが20文字以下であれば登録できること" do
-     user = FactoryBot.build(:user, name: "12345678901234567890")
+    it "nameが10文字以下であれば登録できること" do
+     user = FactoryBot.build(:user, name: "1234567890")
      user.valid?
      expect(user).to be_valid
     end

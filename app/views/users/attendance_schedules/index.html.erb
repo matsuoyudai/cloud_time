@@ -65,7 +65,7 @@
 							<% end %>
 						</td>
 						<td>
-							<%= link_to "勤怠変更", "#{attendance_schedule_path(schedule.id)}?date=#{date}", class:"btn btn-info" %>
+							<%= link_to "勤怠変更", "#{attendance_schedule_path(schedule.id)}?date=#{date}", class:"btn btn-danger" %>
 						</td>
 						<% else %>
 						<td></td>
@@ -74,7 +74,7 @@
 						<td></td>
 						<td></td>
 						<td>
-							<%= link_to "勤怠登録", new_attendance_schedule_path, class:"btn btn-danger" %>
+							<%= link_to "勤怠登録", new_attendance_schedule_path, class:"btn btn-primary" %>
 						</td>
 						<% end %>
 					</tr>
