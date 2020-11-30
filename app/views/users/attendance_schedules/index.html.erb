@@ -19,7 +19,7 @@
 					</tr>
 				</thead>
 
-				<tbody>
+				<tbody class="contents_body">
 					<%=(Date.parse("#{@start_date}")..Date.parse("#{@end_date}")).each do |date| %>
 					<% css_class = case %w{日 月 火 水 木 金 土}[date.wday]
 					when '土'
