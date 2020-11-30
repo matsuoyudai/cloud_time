@@ -19,7 +19,7 @@
 //= require_tree .
 
 $(function(){
-  ScrollReveal().reveal('.wrap', {
+  ScrollReveal().reveal('.wrap, .title', {
     duration: 1600,
     origin: 'top',
     distance: '50px',
