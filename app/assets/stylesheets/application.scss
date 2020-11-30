@@ -33,7 +33,7 @@ body{
       justify-content: center;
       align-items: center;
     }
-  &:nth-child(even) {
+  &:nth-child(odd) {
     flex-direction: row-reverse;
   }
 }
