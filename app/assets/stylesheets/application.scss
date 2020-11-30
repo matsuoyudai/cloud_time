@@ -73,7 +73,7 @@ footer {
   padding: 15px 0;
   font-size: 14px;
   text-align: center;
-  background-color: silver;
+  background-color: #c1c0b9;
 }
 
 p#RealtimeClockArea1 {
@@ -90,4 +90,21 @@ p#RealtimeClockArea2 {
 
 .header_button {
   padding-top: 15px;
+}
+
+.table th {
+  font-size: 15px;
+  text-align: center;
+}
+
+.table td {
+  font-size: 15px;
+}
+
+.contents_title {
+  background-color: #c1c0b9;
+}
+
+.contents_body {
+  background-color: #f9f9f9;
 }
