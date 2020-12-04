@@ -20,7 +20,7 @@
         <% if admin_signed_in? %>
           <div class="admin-message">管理者としてログインしています</div>
         <% elsif user_signed_in? %>
-          <div class="user-message">ようこそ、<%= current_user.name %>さん!</div>
+          <div class="user-message">ようこそ、<%= current_user.name %>さん！</div>
         <% else %>
         <% end %>
       </ul>
