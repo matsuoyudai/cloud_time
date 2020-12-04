@@ -19,11 +19,20 @@
 //= require_tree .
 
 $(function(){
-  ScrollReveal().reveal('.wrap, .title', {
+  ScrollReveal().reveal('.wrap', {
     duration: 1600,
     origin: 'top',
     distance: '50px',
     reset: true
+  });
+});
+
+$(function(){
+  ScrollReveal().reveal('.title', {
+    duration: 1600,
+    origin: 'top',
+    distance: '50px',
+    reset: false
   });
 });
 
