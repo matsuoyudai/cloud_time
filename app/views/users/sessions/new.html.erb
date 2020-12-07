@@ -29,11 +29,18 @@
         </div><br>
 
         <div class="actions">
-          <div class="col-sm-2 col-sm-offset-5 action"><br>
-            <%= f.submit "ログイン", class:"btn btn-success btn-block" %>
+          <div class="text-center"><br>
+            <%= f.submit "ログイン", class:"btn btn-success" %>
           </div>
         </div>
         <% end %>
+
+        <div class="actions">
+          <div class="col-sm-4 col-sm-offset-4 action"><br>
+            <h4><span class="login_title">まだ登録がお済みでない方は<br>
+              <%= link_to "こちら", new_user_registration_path  %>からアカウント登録をしてください</span></h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
