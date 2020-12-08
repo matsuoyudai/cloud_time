@@ -4,11 +4,17 @@
 			<p id="RealtimeClockArea1"></p>
 			<p id="RealtimeClockArea2"></p>
 			<br><p id="notice"><%= notice %></p><br>
-			<%= link_to "出 勤", create_attendance_attendance_schedules_path, method: :post, class:"btn btn-primary btn-lg" %>
-			<% if @attendance_schedule.present? %>　　
-			<%= link_to "退 勤", leave_attendance_schedule_path(@attendance_schedule), method: :patch,class:"btn btn-primary btn-lg" %>
-			<% else %>　　
-			<button type="button" class="btn btn-primary btn-lg" disabled >退 勤</button>
+			<%= link_to create_attendance_attendance_schedules_path, method: :post, class:"attendance_btn" do %>
+				<i class="fas fa-suitcase fa-lg"><br>出 勤</i>
+			<% end %>　　　
+			<% if @attendance_schedule.present? %>
+			<%= link_to leave_attendance_schedule_path(@attendance_schedule), method: :patch,class:"attendance_btn" do %>
+				<i class="fas fa-running fa-lg"><br>退 勤</i>
+			<% end %>
+			<% else %>
+			<button type="button" class="attendance_btn" disabled>
+				<i class="fas fa-running fa-lg"><br>退 勤</i>
+			</button>
 			<% end %>
 		</div>
 	</div>
