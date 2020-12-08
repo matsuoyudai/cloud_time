@@ -95,3 +95,4 @@ gem 'capistrano3-puma'
 gem 'capistrano-rbenv'
 
 gem 'holiday_jp'
+gem 'font-awesome-sass'
