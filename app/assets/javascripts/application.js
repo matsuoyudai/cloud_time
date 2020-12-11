@@ -40,7 +40,7 @@ $(function(){
   $('.header_button').hover(
   function() {
     $(this).animate({
-      'font-size': '18px'
+      'font-size': '17px'
     }, 150);
   },
   function() {
