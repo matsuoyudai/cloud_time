@@ -36,21 +36,6 @@ $(function(){
   });
 });
 
-$(function(){
-  $('.header_button').hover(
-  function() {
-    $(this).animate({
-      'font-size': '17px'
-    }, 150);
-  },
-  function() {
-    $(this).animate({
-      'font-size': '16px'
-    }, 150);
-  }
-);
-});
-
 function showClock1() {
   var nowTime = new Date();
   var nowMonth = nowTime.getMonth()+1;
